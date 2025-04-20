@@ -3,13 +3,13 @@ name: "multi event pipeline"
 on: 
     push:
         branches:
-            - master
-            - test
+            - main
+            - tank
 
     pull_request:
         branches:
-            - master
-            - test
+            - main
+            - tank
 
 jobs:
     on-push:
