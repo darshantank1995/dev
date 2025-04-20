@@ -3,25 +3,28 @@ name: "multi event pipeline"
 on: 
     push:
         branches:
-            - master
-            - test
+            - main
+            - tank
 
     pull_request:
         branches:
-            - master
-            - test
+            - main
+            - tank
 
 jobs:
+    
     on-push:
+        if: github.event_name == 'push'
         runs-on: ubuntu-latest
         steps:
             - name: "master push"
               run: echo "master push"
 
     on-pull-request:
+        if: github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
-            - name: "master push"
-              run: echo "master push"
+            - name: "master pull"
+              run: echo "master pull"
 
             
