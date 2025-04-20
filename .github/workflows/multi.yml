@@ -1,0 +1,27 @@
+name: "multi event pipeline"
+
+on: 
+    push:
+        branches:
+            - master
+            - test
+
+    pull_request:
+        branches:
+            - master
+            - test
+
+jobs:
+    on-push:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "master push"
+              run: echo "master push"
+
+    on-pull-request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "master push"
+              run: echo "master push"
+
+            
